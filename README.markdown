@@ -1,3 +1,3 @@
-* kenneth does dotfiles
+# kenneth does dotfiles
 
-** blah...todo
+## blah...todo
