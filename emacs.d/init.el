@@ -21,7 +21,7 @@
 ;;;; Global Settings ;;;;
 
 ; load emacs files/hacks from .emacs.d/lisp
-(let ((default-directory  "~/.emacs.d/"))
+(let ((default-directory  "~/.emacs.d/lisp"))
   (normal-top-level-add-subdirs-to-load-path))
 (load (expand-file-name "~/.private.el") 'noerror)
 ;concat this to dir names when building load paths
