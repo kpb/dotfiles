@@ -24,9 +24,6 @@
 (let ((default-directory  "~/.emacs.d/lisp"))
   (normal-top-level-add-subdirs-to-load-path))
 (load (expand-file-name "~/.private.el") 'noerror)
-;concat this to dir names when building load paths
-; TODO use the user-emacs-directory var
-(setq site-dir "~/emacs/")
 (setq inhibit-startup-message t) ;we're all sick of it
 (blink-cursor-mode 0)
 (auto-fill-mode 1)
@@ -114,15 +111,6 @@
 (autoload 'markdown-mode "markdown-mode.el"
    "Major mode for editing Markdown files" t)
 
-;;;; org-mode ;;;;
-;(add-to-list 'load-path (concat site-dir "org-6.07b/lisp"))
-;(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-;(setq org-hide-leading-stars nil)
-;;; keys
-;(add-hook 'org-mode-hook
-; (lambda ()
-;   (local-set-key (kbd "<C-return>") 'org-insert-heading-after-current)))
-
 ;;;; shell mode ;;;;
 ;; Fix junk characters in shell mode
 (add-hook 'shell-mode-hook
@@ -132,7 +120,6 @@
 (require 'ruby-mode)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
-
 
 ;;;; nxml ;;;;
 (add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("xml" "xsd"
