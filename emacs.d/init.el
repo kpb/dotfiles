@@ -20,8 +20,9 @@
 
 ;;;; Global Settings ;;;;
 
-;; directory of homegrown emacs hacks
-(add-to-list 'load-path "~/emacs")
+; load emacs files/hacks from .emacs.d/lisp
+(let ((default-directory  "~/.emacs.d/"))
+  (normal-top-level-add-subdirs-to-load-path))
 (load (expand-file-name "~/.private.el") 'noerror)
 ;concat this to dir names when building load paths
 ; TODO use the user-emacs-directory var
