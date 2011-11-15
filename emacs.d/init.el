@@ -157,7 +157,10 @@
 ;;;; color theme ;;;;
 (require 'color-theme)
 (color-theme-initialize)
+;; load up extra themes
+(require 'color-theme-solarized)
 (require 'color-theme-tangotango)
+(require 'color-theme-zenburn)
 ;; set a theme
 ;; tangotango - http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme
 (color-theme-tangotango)
