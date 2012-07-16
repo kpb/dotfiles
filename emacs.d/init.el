@@ -149,21 +149,15 @@
 ;; ;;;; BBDB ;;;;
 ;; installed the bbdb package instead
 ;; (add-to-list 'load-path (concat site-dir "bbdb"))
-(require 'bbdb)
+;(require 'bbdb)
 ;; bbdb file is kept with gtd stuff
-(setq bbdb-file "~/gtd/bbdb")
-(bbdb-initialize)
+;(setq bbdb-file "~/gtd/bbdb")
+;(bbdb-initialize)
 
-;;;; color theme ;;;;
-(require 'color-theme)
-(color-theme-initialize)
-;; load up extra themes
-(require 'color-theme-solarized)
-(require 'color-theme-tangotango)
-(require 'color-theme-zenburn)
-;; set a theme
-;; tangotango - http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme
-(color-theme-tangotango)
+;;;; colors/theme ;;;;
+;; emacs 24 has built in themes
+(load-theme `misterioso)
+
 
 ;;;; php ;;;;
 (require 'php-mode)
