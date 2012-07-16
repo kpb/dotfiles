@@ -81,7 +81,7 @@
   (beep)
   (y-or-n-p PROMPT))
 (setq efs-generate-anonymous-password nil)
-(setq ispell-program-name "/usr/bin/aspell")
+(setq ispell-program-name "c:/bin/aspell")
 
 ;; GNU/FSF Emacs doesn't come with this useful function
 (unless (fboundp 'prefix-region)
