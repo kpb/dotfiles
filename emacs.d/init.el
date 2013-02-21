@@ -182,6 +182,12 @@
       (append '(("\\.js$" . javascript-mode))
 	      auto-mode-alist))
 
+;;;; Puppet ;;;;
+;;  puppet-mode from Puppet Labs Github
+;;
+(require 'puppet-mode)
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+
 
 ;;;; Custom Set Shit ;;;;
 ;; TODO get rid of these, where possible
