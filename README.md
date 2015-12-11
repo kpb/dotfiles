@@ -1,3 +1,3 @@
 # kenneth does dotfiles
 
-## blah...todo
+Some dotfiles I use. emacs.d is the only really interesting thing here.
