@@ -106,6 +106,10 @@
             (font-lock-add-keywords nil outline-font-lock-keywords)
             (font-lock-mode 1)))
 
+(require 'epa-file)
+(epa-file-enable)
+(setenv "GPG_AGENT_INFO" nil)
+
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
 (autoload 'markdown-mode "markdown-mode.el"
@@ -126,18 +130,6 @@
              "sch" "rng" "xslt" "svg" "rss" "xhtml" "html") t) "\\'")
              'nxml-mode))
 
-;;;; malabar mode ;;;;
-;; https://github.com/espenhw/malabar-mode
-;; (add-to-list 'load-path (concat site-dir "malabar-1.4.0/lisp"))
-;; (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
-;;                                   global-semanticdb-minor-mode
-;;                                   global-semantic-idle-summary-mode
-;;                                   global-semantic-mru-bookmark-mode))
-;; (semantic-mode 1)
-;; (require 'malabar-mode)
-;; (setq malabar-groovy-lib-dir
-;;       "/path/to/malabar/lib")
-;; (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;;;; Calendar and Diary ;;;;
 
