@@ -1,3 +1,0 @@
-[submodule "emacs.d/lisp/color-themes/solarized"]
-	path = emacs.d/lisp/color-themes/solarized
-	url = git://github.com/sellout/emacs-color-theme-solarized.git
