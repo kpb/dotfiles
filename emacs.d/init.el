@@ -139,12 +139,10 @@
       diary-file "~/gtd/diary")
 
 ;; ;;;; BBDB ;;;;
-;; installed the bbdb package instead
-;; (add-to-list 'load-path (concat site-dir "bbdb"))
-;(require 'bbdb)
+(require 'bbdb)
 ;; bbdb file is kept with gtd stuff
-;(setq bbdb-file "~/gtd/bbdb")
-;(bbdb-initialize)
+(setq bbdb-file "~/gtd/bbdb")
+(bbdb-initialize)
 
 ;;;; colors/theme ;;;;
 ;; emacs 24 has built in themes
