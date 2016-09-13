@@ -110,6 +110,13 @@
 (epa-file-enable)
 (setenv "GPG_AGENT_INFO" nil)
 
+;;;; MELPA non-stable packages ;;;;
+;; M-x package-list-package to get to the package listing ;;
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
 (autoload 'markdown-mode "markdown-mode.el"
