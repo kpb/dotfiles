@@ -28,7 +28,7 @@
 (blink-cursor-mode 0)
 (auto-fill-mode 1)
 (setq default-major-mode 'text-mode)
-(setq-default fill-column 78)
+(setq-default fill-column 120)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq-default tab-width 4)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
@@ -110,6 +110,12 @@
 (epa-file-enable)
 (setenv "GPG_AGENT_INFO" nil)
 
+;;;; MELP packaging ;;;;
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
+
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
 (autoload 'markdown-mode "markdown-mode.el"
@@ -130,6 +136,8 @@
              "sch" "rng" "xslt" "svg" "rss" "xhtml" "html") t) "\\'")
              'nxml-mode))
 
+;;;; groovy ;;;;
+(add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 
 ;;;; Calendar and Diary ;;;;
 
