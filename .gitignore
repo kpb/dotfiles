@@ -1,2 +1,7 @@
 # ignore file
 examples
+
+# emacs shit
+# MELPA package installs
+elpa
+auto-save-list

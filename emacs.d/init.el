@@ -110,7 +110,8 @@
 (epa-file-enable)
 (setenv "GPG_AGENT_INFO" nil)
 
-;;;; MELP packaging ;;;;
+;;;; MELPA non-stable packages ;;;;
+;; M-x package-list-package to get to the package listing ;;
 (require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
