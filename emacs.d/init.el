@@ -28,7 +28,7 @@
 (blink-cursor-mode 0)
 (auto-fill-mode 1)
 (setq default-major-mode 'text-mode)
-(setq-default fill-column 78)
+(setq-default fill-column 120)
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq-default tab-width 4)
 (global-set-key "\C-x\C-b" 'electric-buffer-list)
@@ -135,8 +135,14 @@
 ;;;; nxml ;;;;
 (add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("xml" "xsd"
              "sch" "rng" "xslt" "svg" "rss" "xhtml" "html") t) "\\'")
-             'nxml-mode))
+                                    'nxml-mode))
 
+;;;; web-mode ;;;;
+;; web mode customizations
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2))
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;;;; Calendar and Diary ;;;;
 
