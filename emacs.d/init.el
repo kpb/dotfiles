@@ -117,6 +117,17 @@
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;;;; web-mode ;;;;
+;; http://web-mode.org/ multi mode for web files ;;
+;; install via melpa ;;
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
 (autoload 'markdown-mode "markdown-mode.el"
