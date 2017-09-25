@@ -55,7 +55,7 @@
 
 ;; window title settings
 (setq frame-title-format
-	  '(buffer-file-name
+      '(buffer-file-name
         "%f" (dired-directory dired-directory "%b")))
 ;; wheel-mouse
 (require 'mwheel)
@@ -89,10 +89,10 @@
     (prefix) "Add a prefix string to each line between mark and point."
     (interactive "sPrefix string: ")
     (if prefix (let ((count (count-lines (mark) (point))))
-		 (goto-char (min (mark) (point)))
-		 (while (> count 0) (setq count (1- count))
-			(beginning-of-line 1) (insert prefix)
-			(end-of-line 1) (forward-char 1))))))
+         (goto-char (min (mark) (point)))
+         (while (> count 0) (setq count (1- count))
+            (beginning-of-line 1) (insert prefix)
+            (end-of-line 1) (forward-char 1))))))
 
 ;; insert nicely formatted date
 (defun insert-date ()
@@ -152,12 +152,13 @@
 ;; web mode customizations
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 (add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("html") t) "\\'")
                                     'web-mode))
-(setq web-mode-markup-indent-offset 2))
-(setq web-mode-code-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
+
 
 ;;;; groovy ;;;;
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
@@ -183,7 +184,7 @@
 
 ;;;; php ;;;;
 (require 'php-mode)
-(add-hook 'php-mode-user-hook 
+(add-hook 'php-mode-user-hook
           (lambda ()
             (turn-on-font-lock)
             (turn-on-auto-fill)))
@@ -194,7 +195,7 @@
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (setq auto-mode-alist
       (append '(("\\.css$" . css-mode))
-	      auto-mode-alist))
+          auto-mode-alist))
 (setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;;;; JavaScript ;;;;
@@ -202,7 +203,7 @@
 (require 'javascript-mode)
 (setq auto-mode-alist
       (append '(("\\.js$" . javascript-mode))
-	      auto-mode-alist))
+          auto-mode-alist))
 
 ;;;; Puppet ;;;;
 ;;  puppet-mode from Puppet Labs Github
