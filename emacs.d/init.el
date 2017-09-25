@@ -114,8 +114,19 @@
 ;; M-x package-list-package to get to the package listing ;;
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
+
+;;;; web-mode ;;;;
+;; http://web-mode.org/ multi mode for web files ;;
+;; install via melpa ;;
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
@@ -147,6 +158,10 @@
 (setq web-mode-markup-indent-offset 2))
 (setq web-mode-code-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
+
+;;;; groovy ;;;;
+(add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
+
 
 ;;;; Calendar and Diary ;;;;
 
