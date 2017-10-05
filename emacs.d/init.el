@@ -147,6 +147,9 @@
   (setq web-mode-code-indent-offset 2)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+(add-to-list 'auto-mode-alist
+             (cons (concat "\\." (regexp-opt '("js" "css"
+                                  "html" "php") t) "\\'") 'web-mode))
 
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
@@ -205,33 +208,11 @@
 ;; emacs 24 has built in themes
 (load-theme `misterioso)
 
-
-;;;; php ;;;;
-(require 'php-mode)
-(add-hook 'php-mode-user-hook
-          (lambda ()
-            (turn-on-font-lock)
-            (turn-on-auto-fill)))
-
-;;;; html ;;;;
-
-;; css mode from http://www.emacswiki.org/cgi-bin/emacs/css-mode.el
-(autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
-(setq auto-mode-alist
-      (append '(("\\.css$" . css-mode))
-          auto-mode-alist))
-(setq cssm-indent-function #'cssm-c-style-indenter)
-
-;;;; JavaScript ;;;;
-;; I use the JavaScript mode from the XEmacs distro, javascript-mode.el
-(require 'javascript-mode)
-(setq auto-mode-alist
-      (append '(("\\.js$" . javascript-mode))
-          auto-mode-alist))
-
 ;;;; Puppet ;;;;
 ;;  puppet-mode from Puppet Labs Github
 ;;
+(use-package puppet-mode
+  :ensure t)
 (require 'puppet-mode)
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
