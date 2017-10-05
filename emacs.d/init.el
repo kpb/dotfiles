@@ -167,13 +167,26 @@
 
 ;;;; nxml ;;;;
 (add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("xml" "xsd"
-             "sch" "rng" "xslt" "svg" "rss" "xhtml" "html") t) "\\'")
-             'nxml-mode))
+             "sch" "rng" "xslt" "svg" "rss" "xhtml") t) "\\'")
+                                    'nxml-mode))
+
+;;;; web-mode ;;;;
+;; web mode customizations
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2))
+(add-hook 'web-mode-hook  'my-web-mode-hook)
+(add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("html") t) "\\'")
+                                    'web-mode))
+
 
 ;;;; groovy ;;;;
 (use-package groovy-mode
   :ensure t)
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
+
 
 ;;;; Calendar and Diary ;;;;
 

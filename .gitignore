@@ -5,5 +5,5 @@ examples
 # MELPA package installs
 elpa
 auto-save-list
-emacs.d/session.*
+session.*
 tramp
