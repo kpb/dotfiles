@@ -55,7 +55,7 @@
 
 ;; window title settings
 (setq frame-title-format
-	  '(buffer-file-name
+      '(buffer-file-name
         "%f" (dired-directory dired-directory "%b")))
 ;; wheel-mouse
 (require 'mwheel)
@@ -89,10 +89,10 @@
     (prefix) "Add a prefix string to each line between mark and point."
     (interactive "sPrefix string: ")
     (if prefix (let ((count (count-lines (mark) (point))))
-		 (goto-char (min (mark) (point)))
-		 (while (> count 0) (setq count (1- count))
-			(beginning-of-line 1) (insert prefix)
-			(end-of-line 1) (forward-char 1))))))
+         (goto-char (min (mark) (point)))
+         (while (> count 0) (setq count (1- count))
+            (beginning-of-line 1) (insert prefix)
+            (end-of-line 1) (forward-char 1))))))
 
 ;; insert nicely formatted date
 (defun insert-date ()
@@ -110,16 +110,36 @@
 (epa-file-enable)
 (setenv "GPG_AGENT_INFO" nil)
 
-;;;; MELPA non-stable packages ;;;;
+;;;; MELPA stable packages ;;;;
 ;; M-x package-list-package to get to the package listing ;;
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "http://melpa.org/packages/") t)
 (package-initialize)
+
+;;;; use-package ;;;;
+;; install use package if needed
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; enable
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
+(require 'bind-key)
+
+;; sundry packages to install that don't have a config section
+(use-package adoc-mode
+  :ensure t)
+(use-package yaml-mode
+  :ensure t)
 
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
-;; install via melpa ;;
+;; install with use-package (via melpa) ;;
+(use-package web-mode
+  :ensure t)
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)
@@ -130,6 +150,8 @@
 
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
+(use-package markdown-mode
+  :ensure t)
 (autoload 'markdown-mode "markdown-mode.el"
    "Major mode for editing Markdown files" t)
 
@@ -149,6 +171,8 @@
              'nxml-mode))
 
 ;;;; groovy ;;;;
+(use-package groovy-mode
+  :ensure t)
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 
 ;;;; Calendar and Diary ;;;;
@@ -171,7 +195,7 @@
 
 ;;;; php ;;;;
 (require 'php-mode)
-(add-hook 'php-mode-user-hook 
+(add-hook 'php-mode-user-hook
           (lambda ()
             (turn-on-font-lock)
             (turn-on-auto-fill)))
@@ -182,7 +206,7 @@
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (setq auto-mode-alist
       (append '(("\\.css$" . css-mode))
-	      auto-mode-alist))
+          auto-mode-alist))
 (setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;;;; JavaScript ;;;;
@@ -190,7 +214,7 @@
 (require 'javascript-mode)
 (setq auto-mode-alist
       (append '(("\\.js$" . javascript-mode))
-	      auto-mode-alist))
+          auto-mode-alist))
 
 ;;;; Puppet ;;;;
 ;;  puppet-mode from Puppet Labs Github
