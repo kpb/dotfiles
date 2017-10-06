@@ -20,9 +20,10 @@
 
 ;;;; Global Settings ;;;;
 
+; commenting out for now...loading everything I need with use-package
 ; load emacs files/hacks from .emacs.d/lisp
-(let ((default-directory  "~/.emacs.d/lisp"))
-  (normal-top-level-add-subdirs-to-load-path))
+;(let ((default-directory  "~/.emacs.d/lisp"))
+;  (normal-top-level-add-subdirs-to-load-path))
 (load (expand-file-name "~/.private.el") 'noerror)
 (setq inhibit-startup-message t) ;we're all sick of it
 (blink-cursor-mode 0)
