@@ -189,6 +189,9 @@
 ;;;; groovy ;;;;
 (use-package groovy-mode
   :ensure t)
+(defun my-groovy-mode-hook ()
+  (setq groovy-indent-offset 2))
+(add-hook 'groovy-mode-hook `my-groovy-mode-hook)
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 
 
