@@ -87,13 +87,13 @@
 ;; GNU/FSF Emacs doesn't come with this useful function
 (unless (fboundp 'prefix-region)
   (defun prefix-region
-    (prefix) "Add a prefix string to each line between mark and point."
-    (interactive "sPrefix string: ")
-    (if prefix (let ((count (count-lines (mark) (point))))
-         (goto-char (min (mark) (point)))
-         (while (> count 0) (setq count (1- count))
-            (beginning-of-line 1) (insert prefix)
-            (end-of-line 1) (forward-char 1))))))
+      (prefix) "Add a prefix string to each line between mark and point."
+      (interactive "sPrefix string: ")
+      (if prefix (let ((count (count-lines (mark) (point))))
+                   (goto-char (min (mark) (point)))
+                   (while (> count 0) (setq count (1- count))
+                          (beginning-of-line 1) (insert prefix)
+                          (end-of-line 1) (forward-char 1))))))
 
 ;; insert nicely formatted date
 (defun insert-date ()
@@ -224,21 +224,25 @@
 ;;;; Custom Set Shit ;;;;
 ;; TODO get rid of these, where possible
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(current-language-environment "English")
- '(safe-local-variable-values (quote ((sh-indent-comment . t) (line-move-ignore-invisible . t))))
+ '(org-agenda-files (quote ("~/notes/uberconf/uberconf.org")))
+ '(safe-local-variable-values
+   (quote
+    ((sh-indent-comment . t)
+     (line-move-ignore-invisible . t))))
  '(show-paren-mode t nil (paren))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(transient-mark-mode t))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
 
