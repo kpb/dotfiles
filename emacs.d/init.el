@@ -87,13 +87,13 @@
 ;; GNU/FSF Emacs doesn't come with this useful function
 (unless (fboundp 'prefix-region)
   (defun prefix-region
-    (prefix) "Add a prefix string to each line between mark and point."
-    (interactive "sPrefix string: ")
-    (if prefix (let ((count (count-lines (mark) (point))))
-         (goto-char (min (mark) (point)))
-         (while (> count 0) (setq count (1- count))
-            (beginning-of-line 1) (insert prefix)
-            (end-of-line 1) (forward-char 1))))))
+      (prefix) "Add a prefix string to each line between mark and point."
+      (interactive "sPrefix string: ")
+      (if prefix (let ((count (count-lines (mark) (point))))
+                   (goto-char (min (mark) (point)))
+                   (while (> count 0) (setq count (1- count))
+                          (beginning-of-line 1) (insert prefix)
+                          (end-of-line 1) (forward-char 1))))))
 
 ;; insert nicely formatted date
 (defun insert-date ()
@@ -239,6 +239,7 @@
  '(package-selected-packages
    (quote
     (base16-theme moe-theme puppet-mode yaml-mode web-mode use-package markdown-mode groovy-mode adoc-mode)))
+ '(org-agenda-files (quote ("~/notes/uberconf/uberconf.org")))
  '(safe-local-variable-values
    (quote
     ((sh-indent-comment . t)
