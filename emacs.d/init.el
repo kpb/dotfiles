@@ -135,6 +135,8 @@
   :ensure t)
 (use-package yaml-mode
   :ensure t)
+(use-package base16-theme
+  :ensure t)
 
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
@@ -157,7 +159,8 @@
 (use-package markdown-mode
   :ensure t)
 (autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
+(setq markdown-reference-location 'end)
 
 ;;;; shell mode ;;;;
 ;; Fix junk characters in shell mode
@@ -224,21 +227,30 @@
 ;;;; Custom Set Shit ;;;;
 ;; TODO get rid of these, where possible
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(current-language-environment "English")
- '(safe-local-variable-values (quote ((sh-indent-comment . t) (line-move-ignore-invisible . t))))
+ '(custom-safe-themes
+   (quote
+    ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+ '(package-selected-packages
+   (quote
+    (base16-theme moe-theme puppet-mode yaml-mode web-mode use-package markdown-mode groovy-mode adoc-mode)))
+ '(safe-local-variable-values
+   (quote
+    ((sh-indent-comment . t)
+     (line-move-ignore-invisible . t))))
  '(show-paren-mode t nil (paren))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(transient-mark-mode t))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
 
