@@ -135,6 +135,8 @@
   :ensure t)
 (use-package yaml-mode
   :ensure t)
+(use-package base16-theme
+  :ensure t)
 
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
@@ -157,7 +159,8 @@
 (use-package markdown-mode
   :ensure t)
 (autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
+(setq markdown-reference-location 'end)
 
 ;;;; shell mode ;;;;
 ;; Fix junk characters in shell mode
@@ -232,7 +235,10 @@
  '(current-language-environment "English")
  '(custom-safe-themes
    (quote
-    ("16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" "bc4c89a7b91cfbd3e28b2a8e9e6750079a985237b960384f158515d32c7f0490" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "aded4ec996e438a5e002439d58f09610b330bbc18f580c83ebaba026bbef6c82" default)))
+    ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+ '(package-selected-packages
+   (quote
+    (base16-theme moe-theme puppet-mode yaml-mode web-mode use-package markdown-mode groovy-mode adoc-mode)))
  '(org-agenda-files (quote ("~/notes/uberconf/uberconf.org")))
  '(package-selected-packages
    (quote
