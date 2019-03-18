@@ -230,7 +230,13 @@
  ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(current-language-environment "English")
+ '(custom-safe-themes
+   (quote
+    ("16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" "bc4c89a7b91cfbd3e28b2a8e9e6750079a985237b960384f158515d32c7f0490" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "aded4ec996e438a5e002439d58f09610b330bbc18f580c83ebaba026bbef6c82" default)))
  '(org-agenda-files (quote ("~/notes/uberconf/uberconf.org")))
+ '(package-selected-packages
+   (quote
+    (moe-theme base16-theme yaml-mode web-mode use-package puppet-mode markdown-mode groovy-mode adoc-mode)))
  '(safe-local-variable-values
    (quote
     ((sh-indent-comment . t)
