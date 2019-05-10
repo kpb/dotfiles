@@ -100,6 +100,17 @@
   (interactive)
   (insert (format-time-string "%d %B %Y")))
 
+(defun sort-words (reverse beg end)
+  "Sort words in region alphabetically, in REVERSE if negative.
+    Prefixed with negative \\[universal-argument], sorts in reverse.
+  
+    The variable `sort-fold-case' determines whether alphabetic case
+    affects the sort order.
+  
+    See `sort-regexp-fields'."
+  (interactive "*P\nr")
+  (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+
 ;;;; outline/outline-minor ;;;;
 ;; set up outline-minor mode for syntax highlighting
 (add-hook 'outline-minor-mode-hook
@@ -235,14 +246,10 @@
  '(current-language-environment "English")
  '(custom-safe-themes
    (quote
-    ("3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
+    ("1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default)))
  '(package-selected-packages
    (quote
-    (base16-theme moe-theme puppet-mode yaml-mode web-mode use-package markdown-mode groovy-mode adoc-mode)))
- '(org-agenda-files (quote ("~/notes/uberconf/uberconf.org")))
- '(package-selected-packages
-   (quote
-    (moe-theme base16-theme yaml-mode web-mode use-package puppet-mode markdown-mode groovy-mode adoc-mode)))
+    (adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml)))
  '(safe-local-variable-values
    (quote
     ((sh-indent-comment . t)
