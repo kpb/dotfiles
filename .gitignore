@@ -1,10 +1,9 @@
-# ignore file
-examples
+# ignore this shit
 
-# emacs shit
-# MELPA package installs
-elpa
 auto-save-list
+elpa
+eshell
+examples
 session.*
 tramp
 url
