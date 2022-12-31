@@ -1,8 +1,8 @@
 ;;; .Emacs -- Kenneth's emacs config
 
-;; Copyright (c) 2005 Kenneth Bowen <kenneth.bowen@pobox.com>
+;; Copyright (c) 2005-2022 Kenneth Bowen <kenneth@kennethbowen.com>
 ;;
-;; Based on Phil Hollenback's (philiph@pobox.com) .emacs, and others
+;; Based on Phil Hollenback's (philiph@pobox.com) .emacs, and others.
 
 ;; meta: This is a rework of my old emacs file that Phil, Peter, and others at
 ;; Lutris helped me construct sometime around '99-2000. I've recently migrated
