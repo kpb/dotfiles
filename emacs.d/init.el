@@ -228,7 +228,7 @@
 
 ;;;; colors/theme ;;;;
 ;; emacs 24 has built in themes
-(load-theme `misterioso)
+(load-theme `base16-atelier-sulphurpool-light t)
 
 ;;;; Puppet ;;;;
 ;;  puppet-mode from Puppet Labs Github
@@ -249,10 +249,11 @@
  '(case-fold-search t)
  '(current-language-environment "English")
  '(custom-safe-themes
-   '("c54024629d99a07dca9318af62f81a42e12449ace38e88850a54e697c011274d" "b0c5c6cc59d530d3f6fbcfa67801993669ce062dda1435014f74cafac7d86246" "36282815a2eaab9ba67d7653cf23b1a4e230e4907c7f110eebf3cdf1445d8370" "146061a7ceea4ccc75d975a3bb41432382f656c50b9989c7dc1a7bb6952f6eb4" "78c1c89192e172436dbf892bd90562bc89e2cc3811b5f9506226e735a953a9c6" "bc4c89a7b91cfbd3e28b2a8e9e6750079a985237b960384f158515d32c7f0490" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default))
+   '("e48fc060df74469f0813aaeca2d3556693c26c8a3d7d6d80c9eb7bd43a087d06" "53f32cec91beb4ef88bd2a796718c41c3c21ebf19a23fa823de712b9f72941ff" "36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da" "c54024629d99a07dca9318af62f81a42e12449ace38e88850a54e697c011274d" "b0c5c6cc59d530d3f6fbcfa67801993669ce062dda1435014f74cafac7d86246" "36282815a2eaab9ba67d7653cf23b1a4e230e4907c7f110eebf3cdf1445d8370" "146061a7ceea4ccc75d975a3bb41432382f656c50b9989c7dc1a7bb6952f6eb4" "78c1c89192e172436dbf892bd90562bc89e2cc3811b5f9506226e735a953a9c6" "bc4c89a7b91cfbd3e28b2a8e9e6750079a985237b960384f158515d32c7f0490" "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453" "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142" "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299" "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39" "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d" "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d" "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default))
+ '(ispell-dictionary nil)
  '(org-agenda-files '("~/dev/11ty/cultureofcode.com/TODO.org"))
  '(package-selected-packages
-   '(feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
+   '(apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company csv-mode diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit markdown-mode popup session tabbar gnu-elpa-keyring-update feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
  '(safe-local-variable-values '((sh-indent-comment . t) (line-move-ignore-invisible . t)))
  '(show-paren-mode t nil (paren))
  '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify))
