@@ -152,9 +152,25 @@ q;;; .Emacs -- Kenneth's emacs config
 (use-package ample-zen-theme
   :ensure t)
 
+;;;; org-roam ;;;;
+;; config from https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/notes/roam-notes")
+  (org-roam-completion-everywhere t)
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i"    . completion-at-point))
+  :config
+  (org-roam-setup))
+
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
-;; install with use-package (via melpa) ;;
 (use-package web-mode
   :ensure t)
 (defun my-web-mode-hook ()
@@ -252,7 +268,7 @@ q;;; .Emacs -- Kenneth's emacs config
  '(ispell-dictionary nil)
  '(org-agenda-files '("~/dev/11ty/cultureofcode.com/TODO.org"))
  '(package-selected-packages
-   '(apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company csv-mode diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit markdown-mode popup session tabbar gnu-elpa-keyring-update feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
+   '(org-roam apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company csv-mode diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit markdown-mode popup session tabbar gnu-elpa-keyring-update feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
  '(safe-local-variable-values '((sh-indent-comment . t) (line-move-ignore-invisible . t)))
  '(show-paren-mode t nil (paren))
  '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify))
