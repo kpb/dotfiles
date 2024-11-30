@@ -159,7 +159,8 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/notes/roam-notes")
+  (org-roam-directory (file-truename "~/notes/roam-notes"))
+  (org-roam-db-location  (file-truename "~/notes/roam-notes/org-roam.db"))
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
@@ -167,7 +168,7 @@
          :map org-mode-map
          ("C-M-i"    . completion-at-point))
   :config
-  (org-roam-setup))
+  (org-roam-db-autosync-mode))
 
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
