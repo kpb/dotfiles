@@ -187,10 +187,9 @@
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
 (use-package markdown-mode
-  :ensure t)
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-(setq markdown-reference-location 'end)
+  :ensure t
+  :custom
+  (markdown-reference-location 'end))
 
 ;;;; shell mode ;;;;
 ;; Fix junk characters in shell mode
