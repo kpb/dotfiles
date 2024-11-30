@@ -1,4 +1,4 @@
-;;; .Emacs -- Kenneth's emacs config
+q;;; .Emacs -- Kenneth's emacs config
 
 ;; Copyright (c) 2005-2022 Kenneth Bowen <kenneth@kennethbowen.com>
 ;;
@@ -37,7 +37,6 @@
 (line-number-mode 1)
 (column-number-mode 1)
 (display-time)
-(setq-default auto-save-mode -1)
 ;; no tool-bar, menubar, scrollbar, or other clutter
 (tool-bar-mode -1)
 (menu-bar-mode -1)
