@@ -1,4 +1,4 @@
-q;;; .Emacs -- Kenneth's emacs config
+;;;; .Emacs -- Kenneth's emacs config
 
 ;; Copyright (c) 2005-2022 Kenneth Bowen <kenneth@kennethbowen.com>
 ;;
@@ -172,17 +172,16 @@ q;;; .Emacs -- Kenneth's emacs config
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
 (use-package web-mode
-  :ensure t)
-(defun my-web-mode-hook ()
-  "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-)
-(add-hook 'web-mode-hook  'my-web-mode-hook)
-(add-to-list 'auto-mode-alist
-             (cons (concat "\\." (regexp-opt '("js" "css"
-                                  "html" "php") t) "\\'") 'web-mode))
+  :ensure t
+  :mode ("\\.html\\'" "\\.js\\'" "\\.css\\'" "\\.php\\'")
+  :hook (web-mode . my-web-mode-hook)
+  :config
+  (defun my-web-mode-hook ()
+    "config hooks for Web mode"
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    ))
 
 ;;;; markdown-mode ;;;;
 ;; http://jblevins.org/projects/markdown-mode/ ;;
@@ -268,7 +267,7 @@ q;;; .Emacs -- Kenneth's emacs config
  '(ispell-dictionary nil)
  '(org-agenda-files '("~/dev/11ty/cultureofcode.com/TODO.org"))
  '(package-selected-packages
-   '(org-roam apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company csv-mode diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit markdown-mode popup session tabbar gnu-elpa-keyring-update feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
+   '(web-mode org-roam apache-mode async bar-cursor bm boxquote browse-kill-ring color-theme-modern company csv-mode diminish eproject folding graphviz-dot-mode helm helm-core htmlize initsplit markdown-mode popup session tabbar gnu-elpa-keyring-update feature-mode base16-theme dockerfile-mode adoc-base16 groovy-markdown mode-mode moe-package puppet-theme theme-use web-yaml))
  '(safe-local-variable-values '((sh-indent-comment . t) (line-move-ignore-invisible . t)))
  '(show-paren-mode t nil (paren))
  '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify))
