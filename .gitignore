@@ -1,5 +1,7 @@
 # ignore this shit
+.org-id-locations
 auto-save-list
+bookmarks
 eln-cache
 elpa
 eshell
