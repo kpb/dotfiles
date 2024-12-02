@@ -125,7 +125,7 @@
 ;; M-x package-list-package to get to the package listing ;;
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 ;;;; use-package ;;;;
@@ -137,20 +137,15 @@
 ;; enable
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
 (require 'bind-key)
 
 ;; sundry packages to install that don't have a config section
-(use-package adoc-mode
-  :ensure t)
-(use-package yaml-mode
-  :ensure t)
-(use-package base16-theme
-  :ensure t)
-(use-package ample-theme
-  :ensure t)
-(use-package ample-zen-theme
-  :ensure t)
+(use-package diminish :ensure t)
+(use-package adoc-mode :ensure t)
+(use-package yaml-mode :ensure t)
+(use-package base16-theme :ensure t)
+(use-package ample-theme :ensure t)
+(use-package ample-zen-theme :ensure t)
 
 ;;;; org-roam ;;;;
 ;; config from https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/
@@ -221,12 +216,6 @@
 ;; file.
 (setq cal-tex-diary t
       diary-file "~/gtd/diary")
-
-;; ;;;; BBDB ;;;;
-(require 'bbdb)
-;; bbdb file is kept with gtd stuff
-(setq bbdb-file "~/gtd/bbdb")
-(bbdb-initialize)
 
 ;;;; colors/theme ;;;;
 ;; emacs 24 has built in themes
