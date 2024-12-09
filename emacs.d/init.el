@@ -81,7 +81,10 @@
   (beep)
   (y-or-n-p PROMPT))
 (setq efs-generate-anonymous-password nil)
-(setq ispell-program-name "/usr/bin/aspell")
+;; On a mac, aspell is installed via homebrew
+(if (eq system-type 'darwin)
+    (setq ispell-program-name '/opt/homebrew/bin/aspell)
+  (setq ispell-program-name '/usr/bin/aspell))
 
 ;; GNU/FSF Emacs doesn't come with this useful function
 (unless (fboundp 'prefix-region)
