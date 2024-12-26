@@ -213,15 +213,7 @@
 (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
 
 
-;;;; Calendar and Diary ;;;;
-
-;; I keep a collection of GTD files under version control, including my diary
-;; file.
-(setq cal-tex-diary t
-      diary-file "~/gtd/diary")
-
 ;;;; colors/theme ;;;;
-;; emacs 24 has built in themes
 (load-theme `base16-atelier-sulphurpool-light t)
 
 ;;;; Puppet ;;;;
