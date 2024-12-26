@@ -152,6 +152,7 @@
 
 ;;;; org-roam ;;;;
 ;; config from https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/
+;; TODO set up dailies and key bindings
 (use-package org-roam
   :ensure t
   :init
@@ -195,9 +196,10 @@
           'ansi-color-for-comint-mode-on)
 
 ;;;; ruby mode ;;;;
-(require 'ruby-mode)
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+(use-package ruby-mode
+  :ensure t
+  :mode ("\\.rb\\'")
+  :interpreter "ruby")
 
 ;;;; nxml ;;;;
 (add-to-list 'auto-mode-alist (cons (concat "\\." (regexp-opt '("xml" "xsd"
@@ -206,12 +208,12 @@
 
 ;;;; groovy ;;;;
 (use-package groovy-mode
-  :ensure t)
-(defun my-groovy-mode-hook ()
-  (setq groovy-indent-offset 2))
-(add-hook 'groovy-mode-hook `my-groovy-mode-hook)
-(add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode))
-
+  :ensure t
+  :config
+  (defun my-groovy-mode-hook ()
+    (setq groovy-indent-offset 2))
+  :hook (groovy-mode . my-groovy-mode-hook)
+  :mode ("\\.groovy\\'" "Jenkinsfile\\'"))
 
 ;;;; colors/theme ;;;;
 (load-theme `base16-atelier-sulphurpool-light t)
@@ -220,10 +222,8 @@
 ;;  puppet-mode from Puppet Labs Github
 ;;
 (use-package puppet-mode
-  :ensure t)
-(require 'puppet-mode)
-(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
-
+  :ensure t
+  :mode "\\.pp\\'")
 
 ;;;; Custom Set Shit ;;;;
 ;; TODO get rid of these, where possible
