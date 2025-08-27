@@ -1,3 +1,4 @@
+# Git Aliases
 alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
