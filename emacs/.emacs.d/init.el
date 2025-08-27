@@ -20,10 +20,7 @@
 
 ;;;; Global Settings ;;;;
 
-; commenting out for now...loading everything I need with use-package
-; load emacs files/hacks from .emacs.d/lisp
-;(let ((default-directory  "~/.emacs.d/lisp"))
-;  (normal-top-level-add-subdirs-to-load-path))
+;; load a private.el file IF we have one
 (load (expand-file-name "~/.private.el") 'noerror)
 (setq inhibit-startup-message t) ;we're all sick of it
 (blink-cursor-mode 0)
@@ -42,16 +39,31 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (global-font-lock-mode 1)
+(setq case-fold-search 1)
+(setq current-language-environment "English")
+(setq safe-local-variable-values '((sh-indent-comment . t) (line-move-ignore-invisible . t)))
+(show-paren-mode 1)
+(transient-mark-mode 1)
+;; prevent custom set vars from ending up in init.el
+(setq custom-file (locate-user-emacs-file "custom-vars.el"))
+(load custom-file 'noerror 'nomessage)
+(global-auto-revert-mode 1)
 
 ;; start the server
 (server-start)
+
+;; keep track of recent files
+(recentf-mode 1)
 
 ;; Turn off back up files
 (setq make-backup-files nil)
 (setq-default abbrev-mode nil)
 ;; I prefer spaces to tabs
 (setq-default indent-tabs-mode nil)
+; enable useful functions
 (put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 
 ;; window title settings
 (setq frame-title-format
@@ -224,50 +236,6 @@
 (use-package puppet-mode
   :ensure t
   :mode "\\.pp\\'")
-
-;;;; Custom Set Shit ;;;;
-;; TODO get rid of these, where possible
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(case-fold-search t)
- '(current-language-environment "English")
- '(custom-safe-themes
-   '("e48fc060df74469f0813aaeca2d3556693c26c8a3d7d6d80c9eb7bd43a087d06"
-     "53f32cec91beb4ef88bd2a796718c41c3c21ebf19a23fa823de712b9f72941ff"
-     "36ca8f60565af20ef4f30783aa16a26d96c02df7b4e54e9900a5138fb33808da"
-     "c54024629d99a07dca9318af62f81a42e12449ace38e88850a54e697c011274d"
-     "b0c5c6cc59d530d3f6fbcfa67801993669ce062dda1435014f74cafac7d86246"
-     "36282815a2eaab9ba67d7653cf23b1a4e230e4907c7f110eebf3cdf1445d8370"
-     "146061a7ceea4ccc75d975a3bb41432382f656c50b9989c7dc1a7bb6952f6eb4"
-     "78c1c89192e172436dbf892bd90562bc89e2cc3811b5f9506226e735a953a9c6"
-     "bc4c89a7b91cfbd3e28b2a8e9e6750079a985237b960384f158515d32c7f0490"
-     "1d079355c721b517fdc9891f0fda927fe3f87288f2e6cc3b8566655a64ca5453"
-     "cea3ec09c821b7eaf235882e6555c3ffa2fd23de92459751e18f26ad035d2142"
-     "3380a2766cf0590d50d6366c5a91e976bdc3c413df963a0ab9952314b4577299"
-     "7559ac0083d1f08a46f65920303f970898a3d80f05905d01e81d49bb4c7f9e39"
-     "4feee83c4fbbe8b827650d0f9af4ba7da903a5d117d849a3ccee88262805f40d"
-     "2a998a3b66a0a6068bcb8b53cd3b519d230dd1527b07232e54c8b9d84061d48d"
-     "16dd114a84d0aeccc5ad6fd64752a11ea2e841e3853234f19dc02a7b91f5d661"
-     "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" default))
- '(ispell-dictionary nil)
- '(org-agenda-files '("~/dev/11ty/cultureofcode.com/TODO.org"))
- '(package-selected-packages
-   '(0blayout adoc-mode ample-theme ample-zen-theme base16-theme diminish dockerfile-mode groovy-mode markdown-mode
-              org-roam puppet-mode web-mode yaml-mode))
- '(safe-local-variable-values '((sh-indent-comment . t) (line-move-ignore-invisible . t)))
- '(show-paren-mode t nil (paren))
- '(text-mode-hook '(turn-on-auto-fill text-mode-hook-identify))
- '(transient-mark-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(put 'upcase-region 'disabled nil)
 
 ;;;; Emacs Local ;;;;
 

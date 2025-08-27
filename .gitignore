@@ -2,10 +2,13 @@
 .org-id-locations
 auto-save-list
 bookmarks
+custom-vars.el
 eln-cache
 elpa
 eshell
 examples
+recentf
 session.*
 tramp
+transient
 url

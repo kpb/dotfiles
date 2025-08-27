@@ -3,7 +3,7 @@
 .DEFAULT_GOAL := help
 
 .PHONY: install
-install: ## Install the dotifle 'packages' into your '$HOME' dir
+install: ## Install the dotfile 'packages' into your '$HOME' dir
 	@echo "Installing dotfiles into $(HOME)"
 	@stow -t $(HOME) bash emacs
 
