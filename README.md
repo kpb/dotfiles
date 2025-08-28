@@ -1,6 +1,6 @@
 # Kenneth Does Dotfiles
 
-I/Kenneth decided to get more serious about my dotfiles. I've started organizing them following [GNU Stow][stow] naming
+I/Kenneth decided to get more serious about my [dotfiles][awsome-dotfiles]. I've started organizing them following [GNU Stow][stow] naming
 conventions and created a Makefile to install/uninstall them easily.
 
 ## Use
@@ -16,4 +16,5 @@ clean      Remove dotfile symlinks using Stow
 
 Enjoy!
 
+[awsome-dotfiles]: https://github.com/webpro/awesome-dotfiles?tab=readme-ov-file "Awesome Dotfiles"
 [stow]: https://www.gnu.org/software/stow/ "GNU Stow - the symlink farm manager"
