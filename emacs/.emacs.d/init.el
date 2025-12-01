@@ -181,6 +181,26 @@
   :config
   (org-roam-db-autosync-mode))
 
+;;;; org-drill ;;;;
+;; https://orgmode.org/worg/org-contrib/org-drill.html
+(use-package org-drill
+  :ensure t
+  :after org
+  :custom
+  (org-drill-cram-hours .15)
+  :config
+  (defun org-drill-time-to-inactive-org-timestamp (time)
+    "Convert TIME into org-mode timestamp."
+    (format-time-string
+     (concat "[" (cdr org-time-stamp-formats) "]")
+     time)))
+
+;;;; toml-mode ;;;;
+;; https://github.com/dryman/toml-mode.el
+(use-package toml-mode
+  :ensure t
+  :mode ("\\.toml\\'"))
+
 ;;;; web-mode ;;;;
 ;; http://web-mode.org/ multi mode for web files ;;
 (use-package web-mode
