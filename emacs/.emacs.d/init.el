@@ -47,7 +47,9 @@
 ;; prevent custom set vars from ending up in init.el
 (setq custom-file (locate-user-emacs-file "custom-vars.el"))
 (load custom-file 'noerror 'nomessage)
+;; This is cool. Auto updates the buffer if the file changes.
 (global-auto-revert-mode 1)
+(add-to-list 'completion-styles 'substring)
 
 ;; start the server
 (server-start)
@@ -162,6 +164,7 @@
 (use-package ample-theme :ensure t)
 (use-package ample-zen-theme :ensure t)
 (use-package dockerfile-mode :ensure t)
+
 ;;;; org-roam ;;;;
 ;; config from https://systemcrafters.net/build-a-second-brain-in-emacs/getting-started-with-org-roam/
 ;; TODO set up dailies and key bindings
@@ -171,8 +174,14 @@
   (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory (file-truename "~/notes/roam-notes"))
-  (org-roam-db-location  (file-truename "~/notes/roam-notes/org-roam.db"))
+  (org-roam-db-location (file-truename "~/notes/roam-notes/org-roam.db"))
   (org-roam-completion-everywhere t)
+
+  ;; *** Show title + tags in org-roam-node-find candidates ***
+  (org-roam-node-display-template
+   (concat "${title:*} "
+           (propertize "${tags:20}" 'face 'org-tag)))
+
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert)
@@ -180,6 +189,7 @@
          ("C-M-i"    . completion-at-point))
   :config
   (org-roam-db-autosync-mode))
+
 
 ;;;; org-drill ;;;;
 ;; https://orgmode.org/worg/org-contrib/org-drill.html
