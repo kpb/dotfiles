@@ -11,7 +11,7 @@ The default Make target will output a useful help message describing the _make t
 $ make
 Targets:
 install    Install the dotfile 'packages' into your '$HOME' dir
-clean      Remove dotfile symlinks using Stow
+clean      Remove dotfile symlinks
 ```
 
 Enjoy!

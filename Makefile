@@ -1,16 +1,17 @@
 # Makefile to install dotfiles. Requires GNU Stow.
 
 .DEFAULT_GOAL := help
+PACKAGES      := bash emacs
 
 .PHONY: install
 install: ## Install the dotfile 'packages' into your '$HOME' dir
 	@echo "Installing dotfiles into $(HOME)"
-	@stow -t $(HOME) bash emacs
+	@stow -t $(HOME) $(PACKAGES)
 
 .PHONY: clean
-clean: ## Remove dotfile symlinks using Stow
+clean: ## Remove dotfile symlinks
 	@echo "Uninstalling dotfiles"
-	@stow -t $(HOME) bash emacs
+	@stow -D -t $(HOME) $(PACKAGES)
 
 .PHONY: help
 help:
