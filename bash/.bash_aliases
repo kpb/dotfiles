@@ -35,6 +35,7 @@ gpf() {
 }
 
 gs()  { git status -sb "$@"; }
+gsw(){ git switch "$@"; }
 
 # completion wiring
 # Attach git completion safely (no-op if git completion isn't loaded)
@@ -68,4 +69,12 @@ if type _git_checkout >/dev/null 2>&1; then
   __gitwrap_complete gco _git_checkout
 else
   __gitwrap_complete gco git
+fi
+
+if type __git_complete >/dev/null 2>&1; then
+  if type _git_switch >/dev/null 2>&1; then
+    __git_complete gsw _git_switch
+  else
+    __git_complete gsw git
+  fi
 fi
