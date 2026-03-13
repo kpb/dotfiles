@@ -4,9 +4,9 @@
 PACKAGES      := bash emacs
 
 .PHONY: install
-install: ## Install the dotfile 'packages' into your '$HOME' dir
+install: ## Restow dotfile 'packages' into your '$HOME' dir
 	@echo "Installing dotfiles into $(HOME)"
-	@stow -t $(HOME) $(PACKAGES)
+	@stow -R -t $(HOME) $(PACKAGES)
 
 .PHONY: clean
 clean: ## Remove dotfile symlinks
