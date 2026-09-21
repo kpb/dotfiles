@@ -10,7 +10,7 @@ The default Make target will output a useful help message describing the _make t
 ```bash
 $ make
 Targets:
-install    Install the dotfile 'packages' into your '$HOME' dir
+install    Restow dotfile 'packages' into your '$HOME' dir
 clean      Remove dotfile symlinks
 ```
 
