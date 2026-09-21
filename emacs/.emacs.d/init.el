@@ -1,4 +1,4 @@
-;;;; .Emacs -- Kenneth's emacs config
+;;;; .init.el --- Kenneth's emacs config  -*- lexical-binding: t; -*-
 
 ;; Copyright (c) 2005-2022 Kenneth Bowen <kenneth@kennethbowen.com>
 ;;
